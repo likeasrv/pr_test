@@ -1,0 +1,450 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    max-width: 400px;
+    width: 100%;
+    animation: cardAppear 0.6s ease-out;
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-header {
+    background: linear-gradient(135deg, #ffd89b 0%, #ff9a9e 100%);
+    padding: 20px;
+    text-align: center;
+}
+
+.card-header h2 {
+    color: white;
+    font-size: 24px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* 강아지 스타일 */
+.puppy {
+    position: relative;
+    width: 200px;
+    height: 250px;
+    margin: 0 auto 30px;
+}
+
+/* 머리 */
+.head {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+}
+
+/* 귀 */
+.ear {
+    position: absolute;
+    width: 50px;
+    height: 70px;
+    background: #d4a574;
+    border-radius: 50% 50% 0 0;
+    top: 20px;
+    animation: earWiggle 2s ease-in-out infinite;
+}
+
+.ear-left {
+    left: 0;
+    transform: rotate(-20deg);
+    animation-delay: 0s;
+}
+
+.ear-right {
+    right: 0;
+    transform: rotate(20deg);
+    animation-delay: 0.1s;
+}
+
+@keyframes earWiggle {
+    0%, 100% {
+        transform: rotate(-20deg);
+    }
+    50% {
+        transform: rotate(-25deg);
+    }
+}
+
+.ear-right {
+    animation-name: earWiggleRight;
+}
+
+@keyframes earWiggleRight {
+    0%, 100% {
+        transform: rotate(20deg);
+    }
+    50% {
+        transform: rotate(25deg);
+    }
+}
+
+/* 얼굴 */
+.face {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: #f4d4a8;
+    border-radius: 50%;
+    top: 30px;
+    left: 10px;
+    border: 3px solid #d4a574;
+}
+
+/* 눈 */
+.eyes {
+    position: absolute;
+    width: 100%;
+    top: 30px;
+}
+
+.eye {
+    position: absolute;
+    width: 25px;
+    height: 30px;
+    background: white;
+    border-radius: 50%;
+    border: 3px solid #333;
+    overflow: hidden;
+}
+
+.eye-left {
+    left: 20px;
+}
+
+.eye-right {
+    right: 20px;
+}
+
+.pupil {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #333;
+    border-radius: 50%;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: eyeMove 3s ease-in-out infinite;
+}
+
+@keyframes eyeMove {
+    0%, 100% {
+        bottom: 5px;
+    }
+    50% {
+        bottom: 8px;
+    }
+}
+
+.sparkle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    top: 8px;
+    left: 8px;
+}
+
+/* 코 */
+.nose {
+    position: absolute;
+    width: 20px;
+    height: 15px;
+    background: #333;
+    border-radius: 50% 50% 50% 50%;
+    top: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 입 */
+.mouth {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    border: 3px solid #333;
+    border-top: none;
+    border-radius: 0 0 50% 50%;
+    top: 75px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 혀 */
+.tongue {
+    position: absolute;
+    width: 15px;
+    height: 20px;
+    background: #ff6b9d;
+    border-radius: 0 0 50% 50%;
+    top: 85px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: tongueWag 1s ease-in-out infinite;
+}
+
+@keyframes tongueWag {
+    0%, 100% {
+        height: 20px;
+    }
+    50% {
+        height: 25px;
+    }
+}
+
+/* 점 */
+.spot {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #d4a574;
+    border-radius: 50%;
+    top: 50px;
+}
+
+.spot-left {
+    left: 5px;
+}
+
+.spot-right {
+    right: 5px;
+}
+
+/* 몸통 */
+.body {
+    position: absolute;
+    width: 100px;
+    height: 80px;
+    background: #f4d4a8;
+    border-radius: 50% 50% 40% 40%;
+    top: 140px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 3px solid #d4a574;
+}
+
+/* 발 */
+.paw {
+    position: absolute;
+    width: 25px;
+    height: 35px;
+    background: #f4d4a8;
+    border-radius: 0 0 40% 40%;
+    bottom: -25px;
+    border: 3px solid #d4a574;
+    border-top: none;
+}
+
+.paw-left {
+    left: 15px;
+}
+
+.paw-right {
+    right: 15px;
+}
+
+/* 꼬리 */
+.tail {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 3px solid #d4a574;
+    border-radius: 50%;
+    border-top: none;
+    border-left: none;
+    top: 150px;
+    right: 10px;
+    transform: rotate(-45deg);
+    animation: tailWag 0.5s ease-in-out infinite;
+}
+
+@keyframes tailWag {
+    0%, 100% {
+        transform: rotate(-45deg);
+    }
+    50% {
+        transform: rotate(-25deg);
+    }
+}
+
+/* 메시지 */
+.message {
+    font-size: 20px;
+    color: #667eea;
+    font-weight: bold;
+    animation: messageFloat 2s ease-in-out infinite;
+}
+
+@keyframes messageFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* 버튼 컨트롤 */
+.controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-icon {
+    font-size: 24px;
+}
+
+.btn-text {
+    font-size: 14px;
+}
+
+.btn-sit {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    color: #5a4f7c;
+}
+
+.btn-bark {
+    background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+    color: white;
+}
+
+.btn-jump {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+/* 강아지 동작 애니메이션 */
+.puppy.sitting {
+    animation: sitDown 0.5s ease forwards;
+}
+
+@keyframes sitDown {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(30px) scaleY(0.85);
+    }
+}
+
+.puppy.barking {
+    animation: bark 0.15s ease-in-out 5;
+}
+
+@keyframes bark {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05) rotate(-2deg);
+    }
+}
+
+.puppy.jumping {
+    animation: jumpUp 0.6s ease-in-out;
+}
+
+@keyframes jumpUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-50px) rotate(-5deg);
+    }
+    50% {
+        transform: translateY(-70px) rotate(5deg);
+    }
+    75% {
+        transform: translateY(-50px) rotate(-5deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* 호버 효과 */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.card:hover .puppy {
+    animation: puppyBounce 0.5s ease;
+}
+
+@keyframes puppyBounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
